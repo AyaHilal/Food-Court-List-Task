@@ -1,5 +1,7 @@
 package com.example.foodcourtlisttask.main.interfaces;
 
+import android.text.Editable;
+
 import com.example.foodcourtlisttask.pojos.Store;
 
 import java.util.List;
@@ -11,4 +13,6 @@ import java.util.List;
 public interface MainPresenterInterface {
     void getStoresListFromPresenter();
     void returnStoresListFromModel(List<Store> storesList);
+
+    void requestModelSearch(Editable s);
 }

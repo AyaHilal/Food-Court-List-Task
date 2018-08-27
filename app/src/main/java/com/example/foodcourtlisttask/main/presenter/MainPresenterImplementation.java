@@ -1,6 +1,7 @@
 package com.example.foodcourtlisttask.main.presenter;
 
 import android.content.Context;
+import android.text.Editable;
 
 
 import com.example.foodcourtlisttask.main.interfaces.MainModelInterface;
@@ -35,5 +36,10 @@ public class MainPresenterImplementation implements MainPresenterInterface {
     @Override
     public void returnStoresListFromModel(List<Store> storesList) {
         mainView.displayStoresList(storesList);
+    }
+
+    @Override
+    public void requestModelSearch(Editable s) {
+         mainModel.requestPresenterSearch(s);
     }
 }
