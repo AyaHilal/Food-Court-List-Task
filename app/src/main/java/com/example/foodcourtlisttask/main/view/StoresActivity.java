@@ -4,11 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
 
 
 import com.example.foodcourtlisttask.R;
@@ -55,30 +51,5 @@ public class StoresActivity extends AppCompatActivity implements MainViewInterfa
         recyclerViewAdapter=new RecyclerViewAdapter(StoresActivity.this,storesList);
         storesRecyclerView.setAdapter(recyclerViewAdapter);
     }
-
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate( R.menu.search_item, menu);
-//        MenuItem myActionMenuItem = menu.findItem( R.id.action_search);
-//        final SearchView searchView = (SearchView) myActionMenuItem.getActionView();
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                if (TextUtils.isEmpty(newText)) {
-//
-//                } else {
-//                }
-//                return true;
-//            }
-//        });
-//
-//        return true;
-//    }
 
 }
