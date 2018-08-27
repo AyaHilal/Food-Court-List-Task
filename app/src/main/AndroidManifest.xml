@@ -24,7 +24,8 @@
 
         </activity>
 
-        <activity android:name=".main.view.StoresActivity">
+        <activity android:name=".main.view.StoresActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
