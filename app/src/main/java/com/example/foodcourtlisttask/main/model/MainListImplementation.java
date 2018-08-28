@@ -2,7 +2,6 @@ package com.example.foodcourtlisttask.main.model;
 
 import android.content.Context;
 import android.text.Editable;
-import android.widget.Toast;
 
 
 import com.example.foodcourtlisttask.main.interfaces.ApiManagerInterface;
@@ -42,7 +41,6 @@ public class MainListImplementation implements MainModelInterface {
     public void returnStoresListFromApi(List<Store> storesList) {
         mainPresenter.returnStoresListFromModel(storesList);
         this.storesList=storesList;
-
     }
 
     @Override

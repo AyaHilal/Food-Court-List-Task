@@ -92,7 +92,7 @@ public class StoresActivity extends AppCompatActivity implements MainViewInterfa
     @Override
     public void displayStoresList(List<Store> storesList) {
         this.storesList = storesList;
-            recyclerViewAdapter = new RecyclerViewAdapter(StoresActivity.this,storesList);
+            recyclerViewAdapter = new RecyclerViewAdapter(StoresActivity.this,this.storesList);
             storesRecyclerView.setAdapter(recyclerViewAdapter);
         RecyclerViewDecorator dividerItemDecoration = new RecyclerViewDecorator(StoresActivity.this);
         storesRecyclerView.addItemDecoration(dividerItemDecoration);

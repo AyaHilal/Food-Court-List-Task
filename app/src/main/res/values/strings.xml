@@ -2,5 +2,6 @@
     <string name="app_name">FoodCourtListTask</string>
     <string name="app_name_display">FoodCourt</string>
     <string name="searchMsg">Type to filter....</string>
+    <string name="connection_error">Please check your internet connectivity first</string>
 
 </resources>

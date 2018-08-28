@@ -8,7 +8,7 @@
             android:gravity="center" />
     </item>
     <item
-        android:bottom="450px">
+        android:bottom="800px">
         <bitmap android:src="@drawable/logo2"
             android:gravity="bottom"
             />
