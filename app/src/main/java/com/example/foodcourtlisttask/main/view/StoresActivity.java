@@ -13,7 +13,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
 import com.example.foodcourtlisttask.R;
@@ -35,6 +34,7 @@ public class StoresActivity extends AppCompatActivity implements MainViewInterfa
     MainPresenterInterface mainPresenter;
     RecyclerView.LayoutManager layoutManager;
     RecyclerViewAdapter recyclerViewAdapter;
+    List<Store>storesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +42,16 @@ public class StoresActivity extends AppCompatActivity implements MainViewInterfa
         setContentView(R.layout.activity_stores);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+
         mainPresenter=new MainPresenterImplementation(this,StoresActivity.this);
+
+            mainPresenter.getStoresListFromPresenter();
 
         //set view details of recycler view
         layoutManager = new LinearLayoutManager(this);
         storesRecyclerView.setLayoutManager(layoutManager);
         storesRecyclerView.setHasFixedSize(true);
-        //call method in presenter to request data
-        mainPresenter.getStoresListFromPresenter();
+
 
         searchEditText.addTextChangedListener(new TextWatcher() {
 
@@ -67,6 +69,7 @@ public class StoresActivity extends AppCompatActivity implements MainViewInterfa
                 mainPresenter.requestModelSearch((Editable) s);
             }
         });
+
 
     }
 
@@ -88,10 +91,11 @@ public class StoresActivity extends AppCompatActivity implements MainViewInterfa
     }
     @Override
     public void displayStoresList(List<Store> storesList) {
+        this.storesList = storesList;
+            recyclerViewAdapter = new RecyclerViewAdapter(StoresActivity.this,storesList);
+            storesRecyclerView.setAdapter(recyclerViewAdapter);
         RecyclerViewDecorator dividerItemDecoration = new RecyclerViewDecorator(StoresActivity.this);
         storesRecyclerView.addItemDecoration(dividerItemDecoration);
-        recyclerViewAdapter=new RecyclerViewAdapter(StoresActivity.this,storesList);
-        storesRecyclerView.setAdapter(recyclerViewAdapter);
     }
 
 }

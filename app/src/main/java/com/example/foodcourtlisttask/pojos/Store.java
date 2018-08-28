@@ -3,11 +3,13 @@ package com.example.foodcourtlisttask.pojos;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Aya on 27/08/2018.
  */
 
-public class Store {
+public class Store{
 
     @SerializedName("StoreID")
     @Expose

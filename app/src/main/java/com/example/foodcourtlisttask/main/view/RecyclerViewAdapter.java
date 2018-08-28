@@ -26,6 +26,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     List<Store> storesList;
     Context context;
+
     public RecyclerViewAdapter(Context context, List<Store> storesList) {
         this.storesList=storesList;
         this.context=context;
@@ -42,8 +43,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
        holder.storeName.setText(storesList.get(position).getName());
        holder.storeDescription.setText(storesList.get(position).getDescription());
        String imageUrl = storesList.get(position).getImage();
-        Log.i("myTag", "url " + imageUrl);
-//        Picasso.with(context).load(imageUrl).into(holder.storeImage);
         Glide.with(context).load(imageUrl).into(holder.storeImage);
 
     }
